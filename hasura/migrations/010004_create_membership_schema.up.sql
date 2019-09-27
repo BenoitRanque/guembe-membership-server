@@ -14,6 +14,12 @@ CREATE TABLE membership.contract (
   sign_date DATE,
   start_date DATE,
   end_date DATE,
+  business_name TEXT,
+  tax_identification_number TEXT,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
+  updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
 CREATE TABLE membership.card (
   card_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -27,10 +33,18 @@ CREATE TABLE membership.card (
   name TEXT NOT NULL,
   document TEXT NOT NULL,
   photo TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
+  updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
 CREATE TABLE membership.use (
   use_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   card_id UUID NOT NULL
     REFERENCES membership.card (card_id)
     ON DELETE RESTRICT,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+  created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
+  updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );

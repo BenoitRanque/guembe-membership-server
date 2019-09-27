@@ -62,9 +62,9 @@ WITH admin_user (user_id) AS (
         (role_id, name, description)
     VALUES
         ('administrator', 'Administrador', 'Usuario Administrador'),
-        ('hr', 'Recursos Humanos', 'Usuario Recursos Humanos'),
-        ('supervisor', 'Supervisor', 'Usuario Supervisor'),
-        ('manager', 'Manager', 'Usuario Manager')
+        ('membership_print', 'Imprimir Membresia', 'Permite crear & imprimir membresia'),
+        ('membership_use', 'Usar Membresia', 'Permite registrar uso de membresia'),
+        ('membership_view', 'Ver Membresia', 'Permite ver membresias')
     RETURNING role_id
 )
 INSERT INTO account.user_role
