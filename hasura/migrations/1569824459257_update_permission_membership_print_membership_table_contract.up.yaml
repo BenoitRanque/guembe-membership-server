@@ -1,0 +1,21 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - business_name
+      - client_id
+      - contract_id
+      - contract_number
+      - created_at
+      - end_date
+      - sign_date
+      - start_date
+      - tax_identification_number
+      - updated_at
+      filter: {}
+      limit: null
+    role: membership_print
+    table:
+      name: contract
+      schema: membership
+  type: create_select_permission

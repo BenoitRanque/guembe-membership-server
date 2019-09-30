@@ -1,0 +1,6 @@
+- args:
+    role: membership_print
+    table:
+      name: client
+      schema: sales
+  type: drop_insert_permission

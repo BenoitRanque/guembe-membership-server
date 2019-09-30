@@ -1,0 +1,24 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - document
+      - image
+      - name
+      - type_id
+      localPresets:
+      - key: created_by_user_id
+        value: x-hasura-user-id
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        created_by_user_id: x-hasura-user-id
+        updated_by_user_id: x-hasura-user-id
+    role: membership_print
+    table:
+      name: card
+      schema: membership
+  type: create_insert_permission

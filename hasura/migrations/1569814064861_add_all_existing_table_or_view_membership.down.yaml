@@ -1,0 +1,20 @@
+- args:
+    table:
+      name: card
+      schema: membership
+  type: untrack_table
+- args:
+    table:
+      name: contract
+      schema: membership
+  type: untrack_table
+- args:
+    table:
+      name: type
+      schema: membership
+  type: untrack_table
+- args:
+    table:
+      name: use
+      schema: membership
+  type: untrack_table

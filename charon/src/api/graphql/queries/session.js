@@ -24,15 +24,17 @@ module.exports = {
     return true
   },
   async session_refresh (args, { req, res }) {
-    const refreshToken = req.cookie['refresh-token']
+    const token = req.cookies['refresh-token']
 
-    if (!refreshToken) {
+    if (!token) {
       throw new Error('No refresh token')
     }
 
-    const { username, user_id } = jwt.verify(token, process.env.AUTH_JWT_SECRET)
+    const { username, name, user_id } = jwt.verify(token, process.env.AUTH_JWT_SECRET)
+
     const user = {
       username,
+      name,
       user_id
     }
     const session = {
@@ -51,7 +53,7 @@ module.exports = {
 
 async function authenticateUser ({ username, password }) {
   const { rows: [ user ] } = await pg.query(/* sql */`
-    SELECT user_id, username, password
+    SELECT user_id, username, password, name
     FROM account.user
     WHERE account.user.username = $1
   `, [ username ])
@@ -59,7 +61,7 @@ async function authenticateUser ({ username, password }) {
   if (user) {
     const valid = await bcrypt.compare(password, user.password)
     if (valid) {
-      return { username, user_id: user.user_id }
+      return { username, user_id: user.user_id, name: user.name }
     }
   }
   throw new Error('Error de authenticacion')
@@ -76,17 +78,19 @@ async function getUserRoles ({ user_id }) {
   return roles.map(({ role_id }) => role_id).concat(['user', 'anonymous'])
 }
 
-function getRefreshToken({ username, user_id }) {
+function getRefreshToken({ username, user_id, name }) {
   const payload = {
     username,
+    name,
     user_id
   }
 
-  return jwt.sign(payload, process.env,AUTH_JWT_SECRET, { expiresIn: '30 days' })
+  return jwt.sign(payload, process.env.AUTH_JWT_SECRET, { expiresIn: '30 days' })
 }
-function getAuthToken({ username, user_id, roles }) {
+function getAuthToken({ username, name, user_id, roles }) {
   const payload = {
     username,
+    name,
     user_id,
     roles
   }

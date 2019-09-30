@@ -5,6 +5,11 @@ CREATE TABLE membership.type (
   description TEXT
 );
 
+INSERT INTO membership.type (type_id, description) VALUES
+  ('INDIVIDUAL', 'Membresia Individual'),
+  ('DUO', 'Membresia Doble'),
+  ('FAMILY', 'Membresia Familiar');
+
 CREATE TABLE membership.contract (
   contract_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   contract_number TEXT,
@@ -32,7 +37,7 @@ CREATE TABLE membership.card (
     ON DELETE CASCADE,
   name TEXT NOT NULL,
   document TEXT NOT NULL,
-  photo TEXT NOT NULL,
+  image TEXT NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),

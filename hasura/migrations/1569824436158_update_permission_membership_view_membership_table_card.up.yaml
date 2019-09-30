@@ -1,0 +1,19 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - card_id
+      - contract_id
+      - created_at
+      - document
+      - image
+      - name
+      - type_id
+      - updated_at
+      filter: {}
+      limit: null
+    role: membership_view
+    table:
+      name: card
+      schema: membership
+  type: create_select_permission

@@ -7,14 +7,14 @@ const mutations = require('./mutations')
 
 const app = express()
 
-app.use(graphqlHTTP(request => ({
+app.use(graphqlHTTP((req, res, graphQLParams) => ({
   schema,
   rootValue: {
     ...queries,
     ...mutations
   },
   graphiql: true,
-  context: request
+  context: { req, res, graphQLParams }
 })))
 
 module.exports = app

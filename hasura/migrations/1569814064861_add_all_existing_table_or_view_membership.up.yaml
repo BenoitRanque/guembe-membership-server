@@ -1,0 +1,16 @@
+- args:
+    name: card
+    schema: membership
+  type: add_existing_table_or_view
+- args:
+    name: contract
+    schema: membership
+  type: add_existing_table_or_view
+- args:
+    name: type
+    schema: membership
+  type: add_existing_table_or_view
+- args:
+    name: use
+    schema: membership
+  type: add_existing_table_or_view

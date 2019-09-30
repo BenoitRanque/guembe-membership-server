@@ -1,0 +1,5 @@
+- args:
+    table:
+      name: client
+      schema: sales
+  type: untrack_table

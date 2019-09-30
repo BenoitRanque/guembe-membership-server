@@ -6,8 +6,6 @@ CREATE TABLE sales.client (
   address TEXT,
   phone TEXT,
   email TEXT,
-  business_name TEXT,
-  tax_identification_number TEXT,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),

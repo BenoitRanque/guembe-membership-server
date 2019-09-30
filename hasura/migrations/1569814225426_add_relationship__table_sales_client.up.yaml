@@ -1,0 +1,12 @@
+- args:
+    name: contracts
+    table:
+      name: client
+      schema: sales
+    using:
+      foreign_key_constraint_on:
+        column: client_id
+        table:
+          name: contract
+          schema: membership
+  type: create_array_relationship

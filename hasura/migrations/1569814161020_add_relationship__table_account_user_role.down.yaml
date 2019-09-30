@@ -1,0 +1,6 @@
+- args:
+    relationship: created_by_user
+    table:
+      name: user_role
+      schema: account
+  type: drop_relationship

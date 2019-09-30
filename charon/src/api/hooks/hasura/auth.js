@@ -15,7 +15,9 @@ app.get('/', parseSession, function (req, res, next) {
   if (session) {
     const role = req.get('X-HASURA-ROLE')
 
-    if (session.roles.includes(role)) {
+    if (!role) {
+      grants['ROLE'] = 'user'
+    } else if (session.roles.includes(role)) {
       grants['ROLE'] = role
     } else {
       console.log(session)

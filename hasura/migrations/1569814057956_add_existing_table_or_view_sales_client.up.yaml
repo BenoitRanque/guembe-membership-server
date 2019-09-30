@@ -1,0 +1,4 @@
+- args:
+    name: client
+    schema: sales
+  type: add_existing_table_or_view

@@ -1,0 +1,6 @@
+- args:
+    relationship: updated_by_user
+    table:
+      name: client
+      schema: sales
+  type: drop_relationship

@@ -1,0 +1,6 @@
+- args:
+    role: membership_print
+    table:
+      name: card
+      schema: membership
+  type: drop_select_permission

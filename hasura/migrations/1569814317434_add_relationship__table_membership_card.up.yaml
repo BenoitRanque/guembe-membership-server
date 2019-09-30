@@ -1,0 +1,12 @@
+- args:
+    name: uses
+    table:
+      name: card
+      schema: membership
+    using:
+      foreign_key_constraint_on:
+        column: card_id
+        table:
+          name: use
+          schema: membership
+  type: create_array_relationship

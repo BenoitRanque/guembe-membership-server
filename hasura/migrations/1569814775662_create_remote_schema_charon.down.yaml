@@ -1,0 +1,3 @@
+- args:
+    name: charon
+  type: remove_remote_schema

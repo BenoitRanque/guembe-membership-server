@@ -1,0 +1,6 @@
+- args:
+    relationship: contracts
+    table:
+      name: client
+      schema: sales
+  type: drop_relationship

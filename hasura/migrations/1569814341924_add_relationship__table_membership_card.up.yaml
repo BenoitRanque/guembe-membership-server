@@ -1,0 +1,8 @@
+- args:
+    name: contract
+    table:
+      name: card
+      schema: membership
+    using:
+      foreign_key_constraint_on: contract_id
+  type: create_object_relationship

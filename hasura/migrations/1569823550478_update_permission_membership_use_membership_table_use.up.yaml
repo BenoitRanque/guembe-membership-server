@@ -1,0 +1,28 @@
+- args:
+    permission:
+      allow_upsert: true
+      check:
+        card:
+          contract:
+            _and:
+            - start_date:
+                _lte: x-hasura-now
+            - end_date:
+                _gte: x-hasura-now
+      columns:
+      - card_id
+      localPresets:
+      - key: created_by_user_id
+        value: x-hasura-user-id
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        created_by_user_id: x-hasura-user-id
+        updated_by_user_id: x-hasura-user-id
+    role: membership_use
+    table:
+      name: use
+      schema: membership
+  type: create_insert_permission
