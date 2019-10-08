@@ -1,0 +1,6 @@
+- args:
+    role: administrator
+    table:
+      name: user
+      schema: account
+  type: drop_insert_permission

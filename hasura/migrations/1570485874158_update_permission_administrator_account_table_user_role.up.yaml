@@ -1,0 +1,8 @@
+- args:
+    permission:
+      filter: {}
+    role: administrator
+    table:
+      name: user_role
+      schema: account
+  type: create_delete_permission

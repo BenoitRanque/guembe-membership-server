@@ -11,7 +11,7 @@ CREATE TABLE sales.client (
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
   updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
-
+CREATE TRIGGER sales_client_set_updated_at BEFORE UPDATE ON sales.client FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 
 -- This next part is more of an idea
 

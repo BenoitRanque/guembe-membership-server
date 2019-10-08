@@ -1,0 +1,19 @@
+- args:
+    permission:
+      columns:
+      - name
+      - password
+      - username
+      filter: {}
+      localPresets:
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        updated_by_user_id: x-hasura-user-id
+    role: administrator
+    table:
+      name: user
+      schema: account
+  type: create_update_permission

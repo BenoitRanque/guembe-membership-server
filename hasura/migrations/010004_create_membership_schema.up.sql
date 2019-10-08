@@ -26,6 +26,7 @@ CREATE TABLE membership.contract (
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
   updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
+CREATE TRIGGER membership_contract_set_updated_at BEFORE UPDATE ON membership.contract FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 CREATE TABLE membership.card (
   card_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   type_id TEXT NOT NULL
@@ -43,6 +44,7 @@ CREATE TABLE membership.card (
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
   updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
+CREATE TRIGGER membership_card_set_updated_at BEFORE UPDATE ON membership.card FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 CREATE TABLE membership.use (
   use_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   card_id UUID NOT NULL
@@ -53,3 +55,4 @@ CREATE TABLE membership.use (
   created_by_user_id UUID NOT NULL REFERENCES account.user (user_id),
   updated_by_user_id UUID NOT NULL REFERENCES account.user (user_id)
 );
+CREATE TRIGGER membership_use_set_updated_at BEFORE UPDATE ON membership.use FOR EACH ROW EXECUTE FUNCTION set_updated_at();

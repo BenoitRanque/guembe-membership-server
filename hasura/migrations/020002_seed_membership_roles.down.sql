@@ -1,0 +1,2 @@
+DELETE FROM account.user_role WHERE role_id IN ('membership_print', 'membership_use', 'membership_view');
+DELETE FROM account.role WHERE role_id IN ('membership_print', 'membership_use', 'membership_view');

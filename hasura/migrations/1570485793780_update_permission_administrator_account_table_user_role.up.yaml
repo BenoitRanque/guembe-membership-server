@@ -1,0 +1,17 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - user_id
+      - role_id
+      - created_at
+      - updated_at
+      - created_by_user_id
+      - updated_by_user_id
+      filter: {}
+      limit: null
+    role: administrator
+    table:
+      name: user_role
+      schema: account
+  type: create_select_permission

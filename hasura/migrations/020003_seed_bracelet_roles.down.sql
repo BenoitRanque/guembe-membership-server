@@ -1,0 +1,2 @@
+DELETE FROM account.user_role WHERE role_id IN ('admittance_bracelet_print', 'admittance_bracelet_view');
+DELETE FROM account.role WHERE role_id IN ('admittance_bracelet_print', 'admittance_bracelet_view');
