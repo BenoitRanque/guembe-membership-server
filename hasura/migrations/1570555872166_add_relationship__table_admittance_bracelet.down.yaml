@@ -1,0 +1,6 @@
+- args:
+    relationship: series
+    table:
+      name: bracelet
+      schema: admittance
+  type: drop_relationship

@@ -1,0 +1,4 @@
+- args:
+    name: series
+    schema: admittance
+  type: add_existing_table_or_view

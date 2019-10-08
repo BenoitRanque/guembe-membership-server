@@ -1,0 +1,5 @@
+- args:
+    table:
+      name: bracelet
+      schema: admittance
+  type: untrack_table

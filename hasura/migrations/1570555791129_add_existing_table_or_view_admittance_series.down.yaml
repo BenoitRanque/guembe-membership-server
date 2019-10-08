@@ -1,0 +1,5 @@
+- args:
+    table:
+      name: series
+      schema: admittance
+  type: untrack_table

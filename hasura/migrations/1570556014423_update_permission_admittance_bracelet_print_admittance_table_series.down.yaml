@@ -1,0 +1,6 @@
+- args:
+    role: admittance_bracelet_print
+    table:
+      name: series
+      schema: admittance
+  type: drop_select_permission

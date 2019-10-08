@@ -1,0 +1,22 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - serial
+      - series_id
+      localPresets:
+      - key: created_by_user_id
+        value: x-hasura-user-id
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        created_by_user_id: x-hasura-user-id
+        updated_by_user_id: x-hasura-user-id
+    role: admittance_bracelet_print
+    table:
+      name: bracelet
+      schema: admittance
+  type: create_insert_permission

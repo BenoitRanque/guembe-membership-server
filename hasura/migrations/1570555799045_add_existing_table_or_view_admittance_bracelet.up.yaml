@@ -1,0 +1,4 @@
+- args:
+    name: bracelet
+    schema: admittance
+  type: add_existing_table_or_view

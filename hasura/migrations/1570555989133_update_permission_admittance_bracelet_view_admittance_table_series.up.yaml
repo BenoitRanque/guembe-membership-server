@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - color
+      - created_at
+      - name
+      - series_id
+      - updated_at
+      filter: {}
+      limit: null
+    role: admittance_bracelet_view
+    table:
+      name: series
+      schema: admittance
+  type: create_select_permission

@@ -1,0 +1,8 @@
+- args:
+    name: series
+    table:
+      name: bracelet
+      schema: admittance
+    using:
+      foreign_key_constraint_on: series_id
+  type: create_object_relationship
