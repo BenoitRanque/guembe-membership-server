@@ -1,0 +1,5 @@
+- args:
+    table:
+      name: print
+      schema: membership
+  type: untrack_table

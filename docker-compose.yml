@@ -18,7 +18,7 @@ services:
     networks:
       - app-network
   pgadmin:
-    image: dpage/pgadmin4:4.8
+    image: dpage/pgadmin4:4.13
     restart: always
     depends_on:
       - postgres
@@ -50,7 +50,7 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
       HASURA_GRAPHQL_AUTH_HOOK: http://charon:8080/hooks/hasura/auth
       HASURA_GRAPHQL_AUTH_HOOK_MODE: GET
-      # HASURA_GRAPHQL_CORS_DOMAIN: "https://chuturubi.com, http://localhost:8080, http://localhost:8081, http://localhost:8082, http://localhost:9695"
+      HASURA_GRAPHQL_CORS_DOMAIN: "https://app.guembe.ti, http://localhost:8080, http://localhost:8081, http://localhost:8082, http://localhost:9695, http://192.168.0.202:8080"
     networks:
       - app-network
   charon:

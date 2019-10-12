@@ -1,0 +1,8 @@
+- args:
+    name: card
+    table:
+      name: print
+      schema: membership
+    using:
+      foreign_key_constraint_on: card_id
+  type: create_object_relationship

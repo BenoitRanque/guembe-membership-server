@@ -1,0 +1,31 @@
+- args:
+    permission:
+      allow_upsert: true
+      check:
+        _and:
+        - card:
+            created_by_user_id:
+              _eq: x-hasura-user-id
+        - _not:
+            card:
+              prints: {}
+      columns:
+      - card_id
+      localPresets:
+      - key: comment
+        value: IMPRESION INICIAL
+      - key: created_by_user_id
+        value: x-hasura-user-id
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        comment: IMPRESION INICIAL
+        created_by_user_id: x-hasura-user-id
+        updated_by_user_id: x-hasura-user-id
+    role: membership_print
+    table:
+      name: print
+      schema: membership
+  type: create_insert_permission

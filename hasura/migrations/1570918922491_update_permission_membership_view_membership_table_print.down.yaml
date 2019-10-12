@@ -1,0 +1,6 @@
+- args:
+    role: membership_view
+    table:
+      name: print
+      schema: membership
+  type: drop_select_permission

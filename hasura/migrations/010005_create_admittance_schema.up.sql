@@ -25,10 +25,6 @@ CREATE TABLE admittance.bracelet (
 );
 CREATE TRIGGER admittance_bracelet_set_updated_at BEFORE UPDATE ON admittance.bracelet FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 
-INSERT INTO account.role (role_id, name, description) VALUES
-  ('admittance_print', 'Imprimir Manillas', 'Permite crear & imprimir manillas'),
-  ('admittance_view', 'Ver Manillas', 'Permite ver manillas');
-
 -- CREATE TABLE admittance.checkpoint (
 --   checkpoint_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 --   checkpoint_name TEXT UNIQUE NOT NULL,

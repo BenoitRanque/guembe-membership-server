@@ -1,0 +1,22 @@
+- args:
+    permission:
+      allow_upsert: true
+      check: {}
+      columns:
+      - card_id
+      - comment
+      localPresets:
+      - key: created_by_user_id
+        value: x-hasura-user-id
+      - key: updated_by_user_id
+        value: x-hasura-user-id
+      - key: ""
+        value: ""
+      set:
+        created_by_user_id: x-hasura-user-id
+        updated_by_user_id: x-hasura-user-id
+    role: membership_reprint
+    table:
+      name: print
+      schema: membership
+  type: create_insert_permission

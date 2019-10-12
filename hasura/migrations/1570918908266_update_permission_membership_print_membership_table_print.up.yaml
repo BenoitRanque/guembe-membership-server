@@ -1,0 +1,18 @@
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - comment
+      - created_at
+      - updated_at
+      - card_id
+      - created_by_user_id
+      - print_id
+      - updated_by_user_id
+      filter: {}
+      limit: null
+    role: membership_print
+    table:
+      name: print
+      schema: membership
+  type: create_select_permission

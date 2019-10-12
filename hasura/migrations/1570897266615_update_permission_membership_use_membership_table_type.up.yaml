@@ -1,0 +1,13 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - description
+      - type_id
+      filter: {}
+      limit: null
+    role: membership_use
+    table:
+      name: type
+      schema: membership
+  type: create_select_permission

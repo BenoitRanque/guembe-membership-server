@@ -1,0 +1,20 @@
+- args:
+    role: membership_view
+    table:
+      name: use
+      schema: membership
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - card_id
+      - created_at
+      - updated_at
+      - use_id
+      filter: {}
+    role: membership_view
+    table:
+      name: use
+      schema: membership
+  type: create_select_permission

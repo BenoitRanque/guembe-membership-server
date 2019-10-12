@@ -1,0 +1,6 @@
+- args:
+    role: membership_reprint
+    table:
+      name: print
+      schema: membership
+  type: drop_insert_permission
