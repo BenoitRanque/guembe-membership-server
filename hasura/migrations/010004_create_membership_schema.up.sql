@@ -8,7 +8,8 @@ CREATE TABLE membership.type (
 INSERT INTO membership.type (type_id, description) VALUES
   ('INDIVIDUAL', 'Membresia Individual'),
   ('DUO', 'Membresia Doble'),
-  ('FAMILY', 'Membresia Familiar');
+  ('FAMILY', 'Membresia Familiar'),
+  ('CHILD', 'Membresia Infantil');
 
 CREATE TABLE membership.contract (
   contract_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
