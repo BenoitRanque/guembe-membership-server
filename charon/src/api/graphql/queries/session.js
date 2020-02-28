@@ -95,5 +95,5 @@ function getAuthToken({ username, name, user_id, roles }) {
     roles
   }
 
-  return jwt.sign(payload, process.env.AUTH_JWT_SECRET, { expiresIn: '10 minutes' })
+  return jwt.sign(payload, process.env.AUTH_JWT_SECRET, { expiresIn: '2 hours' })
 }
